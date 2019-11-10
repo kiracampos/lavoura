@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:each="erro: ${#fields.detailedErrors('${companie.*}')}">
+	<span th:text="${erro.message}"></span>
+</div>
+
+<form method="POST" th:object="${companie}">
+	
+	<label for="name">Name</label>
+	<input type="text" id="name" th:field="*{name}">
+	<br>
+	
+	<label for="social">Social</label>
+	<input type="text" id="social" th:field="*{social}">
+	<br>
+	
+	<label for="cnpj">CNPJ</label>
+	<input type="text" id="cnpj" th:field="*{cnpj}">
+	<br>
+	
+	<label for="address">address</label>
+	<input type="text" id="address" th:field="*{address}">
+	<br>
+	
+	<label for="city">City</label>
+	<input type="text" id="city" th:field="*{city}">
+	<br>
+	
+	<label for="state">State</label>
+	<input type="text" id="state" th:field="*{state}">
+	<br>
+	
+	<label for="name">Country</label>
+	<input type="text" id="country" th:field="*{country}">
+	<br>
+	
+	<label for="phone">Phone</label>
+	<input type="text" id="phone" th:field="*{phone}">
+	<br>
+	
+	<label for="cellphone">CellPhone</label>
+	<input type="text" id="cellphone" th:field="*{cellphone}">
+	<br>
+	
+	<input type="submit" value="Save"> 
+	
+</form>
+
+</body>
+</html>
